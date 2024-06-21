@@ -16,7 +16,7 @@ import random
 # initialize correct guesses variable to 0
 correct_guesses = 0
 
-print("The color choices are: Red, Green, Blue, Orange, and Yellow.")
+print("The color choices are: Red, Green, Blue, Orange, or Yellow.")
 
 # create a for loop that will generate a random number and ask the user to 
 # guess what it is. Repeat 10 times and count how many times the user guesses
@@ -40,6 +40,11 @@ for count in range(10):
     
     # ask for user input on what color they think the computer chose
     user_color_guess = input("\nEnter the color that you think the computer selected? ").upper()
+    
+    # input validation
+    while (user_color_guess != "RED" and user_color_guess != "GREEN" and user_color_guess != "BLUE" and user_color_guess != "ORANGE" and user_color_guess != "YELLOW"):
+        print("\nThe response you entered is not an available option (Red, Green, Blue, Orange, or Yellow).")
+        user_color_guess = input("Enter the color that you think the computer selected? ").upper()
     
     # count the number of correct guesses
     if user_color_guess == computer_color:
